@@ -1,0 +1,114 @@
+
+MAke a dir:
+
+
+mkdir exemplo.com
+
+
+
+:::: one tagert ::::
+
+
+
+whois exemplo.com > whois.txt
+
+
+
+
+dig exemplo.com ANY > dns.txt  
+nslookup -query=ANY exemplo.com >> dns.txt
+
+
+
+sublist3r -d exemplo.com -o subdominios.txt
+
+
+
+
+amass enum -d exemplo.com -o subdominios_amass.txt
+
+
+
+assetfinder --subs-only exemplo.com > subdominios_assetfinder.txt
+
+
+
+nmap -sV -A -T4 exemplo.com -oN nmap.txt
+
+
+
+
+masscan -p1-65535 <IP> --rate=1000 -oJ masscan.txt
+
+
+
+Detect CMS, languagens e frameworks:
+
+
+whatweb exemplo.com -v > whatweb.txt
+
+
+
+gobuster dir -u https://exemplo.com -w /usr/share/wordlists/dirb/common.txt -o gobuster.txt
+
+
+Colects URLs históricos do site.
+
+
+waybackurls exemplo.com > urls_historicos.txt
+
+
+
+
+
+
+theHarvester -d exemplo.com -b google,bing -h theharvester.txt
+
+
+
+
+nikto -h https://exemplo.com -output nikto.txt
+
+
+
+
+curl -I https://exemplo.com > headers.txt
+
+
+
+
+recon-ng:
+
+
+recon-ng 
+
+marketplace install all  
+
+workspace create exemplo  
+
+db insert domains exemplo.com  
+
+use modules/recon/domains-hosts/bing_domain_web  
+
+run  
+
+show 
+hosts  
+
+exit  
+
+
+Junte todas as saídas em um único relatório:
+
+
+cat *.txt > relatorio_final.txt  
+
+
+
+
+
+
+
+
+
+
